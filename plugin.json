@@ -1,0 +1,31 @@
+{
+	"name"				: "BrandCrockWhatsapp",
+	"namespace"			: "BrandCrockWhatsapp",
+	"marketplaceName"	: {"de": "BrandCrock Whatsapp", "en": "BrandCrock Whatsapp"},
+	"type"				: "template",
+	"version"			: "1.0.0",
+	"license"			: "GPL-3.0",
+	"pluginIcon"		: "icon_plugin_xs.png",
+	"price"				: 0.0,
+	"type"              :"template",
+	"require"           : [],
+	"author"			: "BrandCrock",
+	"authorIcon"		: "icon_author_xs.png",
+	"email"				: "sales@brandcrock.de",
+	"phone"				: "+49 89 923068320",
+	"keywords"			: ["BrandCrock", "plentymarkets", "template", "plugin", "whatsapp"],
+	"javaScriptFiles"	: [],
+	"containers"		: [],
+	"platform"			: {
+        					"php": ">=7.3 <8.1"
+    					  },
+	"serviceProvider"   :"BrandCrockWhatsapp\\Providers\\BrandCrockServiceProvider",
+	"dataProviders"     :
+	  [
+		{
+		  "key":"BrandCrockWhatsapp\\Providers\\DataProvider\\BrandCrockWhatsappProvider",
+		  "name":"Whatsapp Widget",
+		  "description":"Display a Whatsapp widget"
+		}
+	  ]
+}
