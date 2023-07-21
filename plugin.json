@@ -20,6 +20,9 @@
         					"php": ">=7.3 <8.1"
     					  },
 	"serviceProvider"   :"BrandCrockWhatsapp\\Providers\\BrandCrockServiceProvider",
+	"runOnBuild": [
+        "BrandCrockWhatsapp\\Migrations\\CreateSettingsTable"
+   	 ],
 	"dataProviders"     :
 	  [
 		{
