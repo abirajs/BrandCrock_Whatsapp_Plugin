@@ -41,7 +41,7 @@ class Settings extends Model
      */
     public function getTableName(): string
     {
-        return 'BrandCrock::settings';
+        return 'Novalnet::settings';
     }
 
     /**
