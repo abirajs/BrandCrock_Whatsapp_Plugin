@@ -1,0 +1,80 @@
+{# Handle view file #}
+<link rel="stylesheet" href="{{plugin_path('BrandCrockWhatsapp')}}/css/brandcrockwhatsapp.css">
+<script type="text/javascript" src="{{plugin_path('BrandCrockWhatsapp')}}/js/brandcrockwhatsapp.js"></script>
+
+{# Redirect URL hidden values are set #}
+<input type="hidden" name="bc_whatsapp_desktop_URL" id="bc_whatsapp_desktop_URL" value="{{desktopURL}}">
+<input type="hidden" name="bc_whatsapp_mobile_URL" id="bc_whatsapp_mobile_URL" value="{{mobileURL}}">
+<input type="hidden" name="bc_whatsapp_open_new_tab" id="bc_whatsapp_open_new_tab" value="{{openNewTab}}">
+<input type="hidden" name="bc_whatsapp_is_mobile" id="bc_whatsapp_is_mobile" value="{{isMobile}}">
+
+{# Button style hidden values are set #}
+<input type="hidden" name="bc_whatsapp_mobile_theme"   id="bc_whatsapp_mobile_theme" value="{{mobileTheme}}">
+<input type="hidden" name="bc_whatsapp_mobile_shape"   id="bc_whatsapp_mobile_shape" value="{{mobileShape}}">
+<input type="hidden" name="bc_whatsapp_desktop_theme"  id="bc_whatsapp_desktop_theme" value="{{desktopTheme}}">
+<input type="hidden" name="bc_whatsapp_desktop_shape"  id="bc_whatsapp_desktop_shape" value="{{desktopShape}}">
+<input type="hidden" name="bc_whatsapp_profile_logo"  id="bc_whatsapp_profile_logo" value="{{profileLogo}}">
+
+{# Set a whatsapp widjets #}
+{% if (isMobile == 'false')  %}
+    {% if (desktopTheme == 'green') and (desktopShape == 'circle') %}
+		<div>
+		<img src="{{plugin_path('BrandCrockWhatsapp')}}/images/WhatsAppRoundGreen.svg" alt="whatsapp-chat" width="45" height="45"  class="whatsappwidget" id="whatsappwidget" style="cursor:pointer;">
+		</div>
+    {% endif %}
+    {% if (desktopTheme == 'white') and (desktopShape == 'circle') %}
+		<div>
+		<img src="{{plugin_path('BrandCrockWhatsapp')}}/images/WhatsAppRoundWhite.svg" alt="whatsapp-chat" width="45" height="45"  class="whatsappwidget" id="whatsappwidget" style="cursor:pointer;">
+		</div>
+    {% endif %}
+    {% if (desktopTheme == 'green') and (desktopShape == 'rectangle') %}
+		<div>
+		<img src="{{plugin_path('BrandCrockWhatsapp')}}/images/WhatsAppSquareGreen.svg" alt="whatsapp-chat" width="150" height="45"  class="whatsappwidget" id="whatsappwidget" style="cursor:pointer;">
+		</div>
+    {% endif %}
+    {% if (desktopTheme == 'white') and (desktopShape == 'rectangle') %}
+		<div>
+		<img src="{{plugin_path('BrandCrockWhatsapp')}}/images/WhatsAppSquareWhite.svg" alt="whatsapp-chat" width="150" height="45"  class="whatsappwidget" id="whatsappwidget" style="cursor:pointer;">
+		</div>
+    {% endif %}
+{% endif %}
+
+{% if (isMobile == 'true') %}
+    {% if (mobileTheme == 'green') and (mobileShape == 'circle') %}
+		<div>
+		<img src="{{plugin_path('BrandCrockWhatsapp')}}/images/WhatsAppRoundGreen.svg" alt="whatsapp-chat" width="45" height="45"  class="whatsappwidget" id="whatsappwidget" style="cursor:pointer;">
+		</div>
+    {% endif %}
+    {% if (mobileTheme == 'white') and (mobileShape == 'circle') %}
+		<div>
+		<img src="{{plugin_path('BrandCrockWhatsapp')}}/images/WhatsAppRoundWhite.svg" alt="whatsapp-chat" width="45" height="45"  class="whatsappwidget" id="whatsappwidget" style="cursor:pointer;">
+		</div>
+    {% endif %}
+    {% if (mobileTheme == 'green') and (mobileShape == 'rectangle') %}
+		<div>
+		<img src="{{plugin_path('BrandCrockWhatsapp')}}/images/WhatsAppSquareGreen.svg" alt="whatsapp-chat" width="150" height="45"  class="whatsappwidget" id="whatsappwidget" style="cursor:pointer;">
+		</div>
+    {% endif %}
+    {% if (mobileTheme == 'white') and (mobileShape == 'rectangle') %}
+		<div>
+		<img src="{{plugin_path('BrandCrockWhatsapp')}}/images/WhatsAppSquareWhite.svg" alt="whatsapp-chat" width="150" height="45"  class="whatsappwidget" id="whatsappwidget" style="cursor:pointer;">
+		</div>
+    {% endif %}
+{% endif %}
+
+{# Set a whatsapp container #}
+	<div  class="whatsappcontainer" style="display:none;height:250px;width:300px;">	
+		<div class="whatsapp-header" style="height:60px;width:300px;background-color: #075e54;color:white;align-items:center;padding-top:10px;border-radius:6px 6px 0 0;">
+			<div style="float:left;padding-left:15px;margin-top:10px; font-weight:bold;"> {{chatHeading}} </div>
+			<div class="whatsapp-cancel" style="float:right;padding-right:15px;cursor:pointer; font-weight: bold;margin-top:7px;"> X </div>
+		</div>
+		<div style="height:65px;width:300px;background-color: white;padding:3px;font-family: Arial, Helvetica, sans-serif;"><span style="padding:2px;">{{chatDescription}}</span></div>	
+		<div style="height:75px;width:300px;background-color: white;display:flex;padding:10px 0px" class="member1" id="manager" onclick="whatsapp(1)" phone="{{mobileNumber}}">
+			<div><img src="{{profileLogo}}" alt="whatsapp-chat" width="50" height="50" style="border-radius: 50%;cursor:pointer"></div>
+			<div style="margin-left:10px">
+				<div style="font-weight: bold;cursor:pointer" value="{{accountName}}">{{accountName}}</div>
+				<div style="cursor:pointer;font-size:14px;" value="{{accountRole}}">{{accountRole}}</div>
+			</div>
+		</div>		
+		<div style="height:40px;width:300px;background-color: white;padding:1px 0px;text-align:center;font-size: 12px;"><span style="margin-bottom:30px;">Plentymarkets</span></div>
+	</div>
