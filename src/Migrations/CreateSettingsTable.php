@@ -6,9 +6,9 @@
  * @copyright(C) BrandCrock
  * @license      https://www.brandcrock.de/payment-plugins/kostenlos/lizenz
  */
-namespace BrandCrock\Migrations;
+namespace BrandCrockWhatsapp\Migrations;
 
-use BrandCrock\Models\Settings;
+use BrandCrockWhatsapp\Models\Settings;
 use Plenty\Modules\Plugin\DataBase\Contracts\Migrate;
 
 /**
