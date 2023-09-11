@@ -291,12 +291,13 @@ class BrandCrockAssistant extends WizardProvider
                         'profileLogo' =>
                         [
                             'type'      	=> 'file',
-							'defaultValue'	=> $this->getDefaultProfileIcon(),
+			    'defaultValue'	=> $this->getDefaultProfileIcon(),
                             'options'   	=> [
                                             'name'              => 'BrandCrockAssistant.profile',
                                             'showPreview'       => true,
                                             'allowedExtensions' => ['svg', 'png', 'jpg', 'jpeg'],
                                             'allowFolders'      => false,
+					    'required'          => true,
                                            ]
                         ],
                     ]
