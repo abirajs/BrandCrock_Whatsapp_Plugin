@@ -124,7 +124,19 @@ class BrandCrockAssistant extends WizardProvider
        $config = $this->createButtonStyleDesktopConfiguration($config);
        return $config;
     }
-
+    
+   /**
+     * Load Default Profile Icon
+     *
+     * @return string
+     */
+    protected function getDefaultProfileIcon()
+    {
+        $app = pluginApp(Application::class);
+        $icon = $app->getUrlPath('BrandCrockWhatsapp').'/images/leader.png';
+        return $icon;
+    }
+    
    /**
      * Load BrandCrock Icon
      *
@@ -278,14 +290,13 @@ class BrandCrockAssistant extends WizardProvider
 
                         'profileLogo' =>
                         [
-                            'type'      => 'file',
-
-                            'options'   => [
+                            'type'      	=> 'file',
+							'defaultValue'	=> $this->getDefaultProfileIcon(),
+                            'options'   	=> [
                                             'name'              => 'BrandCrockAssistant.profile',
                                             'showPreview'       => true,
                                             'allowedExtensions' => ['svg', 'png', 'jpg', 'jpeg'],
                                             'allowFolders'      => false,
-                                            'required'  => true,
                                            ]
                         ],
                     ]
