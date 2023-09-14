@@ -70,11 +70,19 @@
         </div>
         <div style="height:65px;width:300px;background-color: white;padding:3px;font-family: Arial, Helvetica, sans-serif;"><span style="padding:2px;">{{chatDescription}}</span></div>
         <div style="height:75px;width:300px;background-color: white;display:flex;padding:10px 0px" class="member1" id="manager" onclick="whatsapp(1)" phone="{{mobileNumber}}">
+			{% if profileLogo is not empty %}
             <div><img src="{{profileLogo}}" alt="whatsapp-chat" width="50" height="50" style="border-radius: 50%;cursor:pointer"></div>
             <div style="margin-left:10px">
                 <div style="font-weight: bold;cursor:pointer" value="{{accountName}}">{{accountName}}</div>
                 <div style="cursor:pointer;font-size:14px;" value="{{accountRole}}">{{accountRole}}</div>
             </div>
+            {% else %}
+            <div style="margin-left:10px">
+                <div style="font-weight: bold;cursor:pointer" value="{{accountName}}">{{accountName}}</div>
+                <div style="cursor:pointer;font-size:14px;" value="{{accountRole}}">{{accountRole}}</div>
+            </div>
+            {% endif %}
+            
         </div>
         <div style="height:40px;width:300px;background-color: white;padding:1px 0px;text-align:center;font-size: 12px;"><span style="margin-bottom:30px;">Plentymarkets</span></div>
     </div>
