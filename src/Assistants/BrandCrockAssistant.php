@@ -13,7 +13,7 @@ use BrandCrockWhatsapp\Assistants\SettingsHandlers\BrandCrockAssistantSettingsHa
 use Plenty\Modules\Wizard\Services\WizardProvider;
 use Plenty\Modules\System\Contracts\WebstoreRepositoryContract;
 use Plenty\Plugin\Application;
-
+use Plenty\Plugin\Log\Loggable;
 
 /**
  * Class BrandCrockAssistant
@@ -23,7 +23,7 @@ use Plenty\Plugin\Application;
 class BrandCrockAssistant extends WizardProvider
 {
 
-
+    use Loggable; 	
     /**
      * @var WebstoreRepositoryContract
      */
@@ -133,7 +133,8 @@ class BrandCrockAssistant extends WizardProvider
     protected function getDefaultProfileIcon()
     {
         $app = pluginApp(Application::class);
-        $icon = $app->getUrlPath('BrandCrockWhatsapp').'/images/leader.png';
+        $icon = $app->getUrlPath('BrandCrockWhatsapp').'/images/employee.png';
+	$this->getLogger(__METHOD__)->error('Novalnet::BrandCrockWhatsapp', $icon);    
         return $icon;
     }
     
@@ -304,6 +305,7 @@ class BrandCrockAssistant extends WizardProvider
                 ]
             ]
         ];
+	$this->getLogger(__METHOD__)->error('Novalnet::defaultValue', $config);    
         return $config;
     }
 
