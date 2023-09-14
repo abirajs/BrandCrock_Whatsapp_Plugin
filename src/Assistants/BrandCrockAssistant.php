@@ -298,7 +298,7 @@ class BrandCrockAssistant extends WizardProvider
                                             'showPreview'       => true,
                                             'allowedExtensions' => ['svg', 'png', 'jpg', 'jpeg'],
                                             'allowFolders'      => false,
-					    'required'		=> true,
+					   
                                            ]
                         ],
                     ]
